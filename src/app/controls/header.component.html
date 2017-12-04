@@ -1,0 +1,15 @@
+<!-- Page Header -->
+<header class="masthead" [style.background-image]="'url(' + this.backgroundImage + ')'">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1 class="text-center">{{this.title}}</h1>
+          <h2 class="text-center" class="subheading">{{this.subTitle}}</h2>
+          <span *ngIf="this.meta" class="meta">{{this.meta}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
