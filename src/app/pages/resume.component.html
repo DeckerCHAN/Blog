@@ -1,0 +1,199 @@
+<!--<nav class=" position-fixed" id="sideNav">-->
+
+<!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--<ul class="navbar-nav">-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link js-scroll-trigger" href="#about">About</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link js-scroll-trigger" href="#experience">Experience</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link js-scroll-trigger" href="#education">Education</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link js-scroll-trigger" href="#skills">Skills</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link js-scroll-trigger" href="#interests">Interests</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link js-scroll-trigger" href="#awards">Awards</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</nav>-->
+<!--introduction-->
+<div class="intro">
+  <img class="intro-img img-fluid mb-3 mb-lg-0" src="assets/img/self.jpg" alt="">
+  <div class="intro-text  text-center container  bright-shadow  pr-lg-5">
+    <h1 class="mb-2">Derek
+      <span class="text-primary">CHAN</span>
+    </h1>
+    <div class="h4 mb-5">16 Orange Street · Eastwoods, NSW 2122 · 0420 520 626·
+      <a href="mailto:name@email.com">deckerchan@gmail.com</a>
+    </div>
+    <p class="mb-5 h5">I am 2/3 stack developer experienced in back end frameworks to provide a robust system for
+      business logic. Iterative approaches to corporate strategy foster collaborative thinking to further the overall
+      value
+      proposition.</p>
+
+    <ul class="list-inline list-social-icons mb-0">
+      <li class="list-inline-item">
+        <a href="https://weibo.com/1256460320/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.linkedin.com/in/derek-chan-a0b51365/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://github.com/DeckerCHAN">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--education-->
+
+<div class=" container ">
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+    <div class="my-auto">
+      <h1 class="mb-5 text-info">Education</h1>
+
+      <div *ngFor="let item of this.education" class="resume-item d-flex flex-column flex-md-row mb-5 icon-bg">
+
+        <div class="resume-content mr-auto bright-shadow container">
+          <div class="row">
+            <h3 class="mb-0 text-success bright-shadow col-12">{{item.name}}</h3>
+          </div>
+          <div class="row">
+            <h4 class="mb-0 bright-shadow col-md-auto text-left">{{item.major}}</h4>
+            <span class="text-primary bright-shadow pt-1 col-md-4 text-left">{{item.period}}</span>
+          </div>
+
+          <div class="row">
+            <div class="text-secondary mt-3 bright-shadow col-12">{{item.direction}}</div>
+          </div>
+          <div class="row">
+            <p class="bright-shadow col-12">{{item.description}}</p>
+          </div>
+
+          <div class="row">
+            <p class="bright-shadow col-12"><strong>GPA:{{item.gpa}}</strong></p>
+
+          </div>
+        </div>
+        <img src="{{item.bg}}" class="resume-img">
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+    <div class="my-auto">
+      <h1 class="mb-5 text-info">Experience</h1>
+
+      <div *ngFor="let item of this.experiences" class="resume-item d-flex flex-column flex-md-row mb-5 icon-bg">
+
+        <div class="resume-content mr-auto bright-shadow container">
+          <div class="row">
+            <h3 class="mb-0 text-success bright-shadow col-12">{{item.company}}</h3>
+          </div>
+          <div class="row">
+            <h4 class="mb-0 bright-shadow col-md-auto text-left">{{item.location}}</h4>
+            <span class="text-primary bright-shadow pt-1 col-md-4 text-left">{{item.period}}</span>
+          </div>
+
+          <div class="row">
+            <div class="text-secondary mt-3 bright-shadow col-12">{{item.position}}</div>
+          </div>
+          <div class="row">
+            <p class="bright-shadow col-12">{{item.description}}</p>
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+    <div class="my-auto ">
+      <h1 class="mb-5 text-info">Skills</h1>
+      <div class="container-fluid">
+        <div *ngFor="let item of this.skills" class="row align-items-center mb-3" data-toggle="collapse"
+             [attr.data-target]="'#'+item.name"
+             aria-expanded="false">
+          <i class="col-auto devicons colored"
+
+             [attr.aria-controls]="item.name"
+             [ngClass]="item.iconClasses"></i>
+          <div class="progress p-0 col">
+            <div [ngClass]="item.barClasses" role="progressbar" [ngStyle]="{'width.%':item.level}"
+                 [attr.aria-valuenow]="item.level" aria-valuemin="0" aria-valuemax="100"></div>
+
+          </div>
+
+          <div class="collapse mt-3" [attr.id]="item.name">
+            <div class="card card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
+              anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <section class=" p-3 p-lg-5 d-flex flex-column" id="languages">
+    <div class="my-auto">
+      <div class="h1 mb-5 text-info">Language</div>
+      <div class="h2 mt-4">Native:</div>
+      <ul class="list-group mt-2">
+        <li class="list-group-item">Chinese Mandarin</li>
+      </ul>
+
+      <div class="h2 mt-4">Conversational:</div>
+      <ul class="list-group mt-2">
+        <li class="list-group-item">English</li>
+        <li class="list-group-item">Japanese</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class=" p-3 p-lg-5 d-flex flex-column" id="visa">
+    <div class="my-auto">
+      <div class="h1 mb-5 text-info">Visa Status</div>
+      <p><strong>
+        2 Years Student Working Visa
+      </strong></p>
+      <p class="text-muted">
+        Skilled Independent Visa(subclass 189) Scheduled
+      </p>
+    </div>
+  </section>
+
+</div>

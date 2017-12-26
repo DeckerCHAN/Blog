@@ -7,6 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { PrimaryComponent } from './pages/primary.component';
 import { NavigatorComponent } from './controls/navigator.component';
 import { HeaderComponent } from './controls/header.component';
+import { ResumeComponent } from './pages/resume.component';
+import { LazyLoadComponent } from './controls/lazy-load.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollSpyModule, ScrollSpyService } from 'ngx-scrollspy';
 
 
 @NgModule({
@@ -14,14 +18,18 @@ import { HeaderComponent } from './controls/header.component';
     AppComponent,
     PrimaryComponent,
     NavigatorComponent,
-    HeaderComponent
+    HeaderComponent,
+    ResumeComponent,
+    LazyLoadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ScrollSpyModule
 
   ],
-  providers: [],
+  providers: [ScrollSpyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
