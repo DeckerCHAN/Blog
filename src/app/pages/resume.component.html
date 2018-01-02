@@ -33,7 +33,8 @@
     <div class="h4 mb-5">16 Orange Street · Eastwoods, NSW 2122 · 0420 520 626·
       <a href="mailto:name@email.com">deckerchan@gmail.com</a>
     </div>
-    <p class="mb-5 h5">I am 2/3 stack developer experienced in both back and front end frameworks to provide a robust system for
+    <p class="mb-5 h5">I am 2/3 stack developer experienced in both back and front end frameworks to provide a robust
+      system for
       business logic. Iterative approaches to corporate strategy foster collaborative thinking to further the overall
       value
       proposition.</p>
@@ -67,7 +68,6 @@
   </div>
 </div>
 
-<!--education-->
 
 <div class=" container ">
 
@@ -104,7 +104,80 @@
 
     </div>
   </section>
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+    <div class="my-auto ">
+      <h1 class="mb-5 text-info">Skills</h1>
+      <div class="container-fluid">
+        <div *ngFor="let item of this.skills" class="row align-items-center mb-3" data-toggle="collapse"
+             [attr.data-target]="'#'+item.name"
+             aria-expanded="false">
+          <i class="col-auto devicons colored"
 
+             [attr.aria-controls]="item.name"
+             [ngClass]="item.iconClasses"></i>
+          <div class="progress p-0 col">
+            <div [ngClass]="item.barClasses" role="progressbar" [ngStyle]="{'width.%':item.level}"
+                 [attr.aria-valuenow]="item.level" aria-valuemin="0" aria-valuemax="100"></div>
+
+          </div>
+
+          <div class="collapse col-12 mt-3" [attr.id]="item.name">
+            <div class="card card-body">
+              {{item.description}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
+    <div class="my-auto">
+      <h1 class="mb-5 text-info">Projects</h1>
+
+      <div *ngFor="let item of this.projects" class="resume-item d-flex flex-column flex-md-row mb-5 icon-bg">
+
+        <div class="resume-content mr-auto  container">
+          <div class="row">
+            <h3 class="mb-0 text-success  col-12">{{item.name}}</h3>
+          </div>
+
+          <div class="row">
+            <div class="mb-0  col-auto text-left">Key Words:
+
+            </div>
+
+            <div *ngFor="let keyword of item.keywords" class="px-2"><span
+              class="badge badge-secondary">{{keyword}}</span>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <p class=" col-12">{{item.description}}</p>
+          </div>
+          <div class="row">
+            <div *ngIf="item.projectUrl" class="h5 col-auto px-2">
+              <a href="{{item.projectUrl}}" class="badge badge-primary p-2">Project Page</a>
+
+            </div>
+            <div *ngIf="item.projectDemoUrl" class="h5 col-auto px-2">
+              <a href="{{item.projectDemoUrl}}" class="badge badge-primary  p-2">Live Demo</a>
+
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
 
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
     <div class="my-auto">
@@ -137,36 +210,6 @@
 
   </section>
 
-  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-    <div class="my-auto ">
-      <h1 class="mb-5 text-info">Skills</h1>
-      <div class="container-fluid">
-        <div *ngFor="let item of this.skills" class="row align-items-center mb-3" data-toggle="collapse"
-             [attr.data-target]="'#'+item.name"
-             aria-expanded="false">
-          <i class="col-auto devicons colored"
-
-             [attr.aria-controls]="item.name"
-             [ngClass]="item.iconClasses"></i>
-          <div class="progress p-0 col">
-            <div [ngClass]="item.barClasses" role="progressbar" [ngStyle]="{'width.%':item.level}"
-                 [attr.aria-valuenow]="item.level" aria-valuemin="0" aria-valuemax="100"></div>
-
-          </div>
-
-          <div class="collapse mt-3" [attr.id]="item.name">
-            <div class="card card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
-              anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-    </div>
-  </section>
 
   <section class=" p-3 p-lg-5 d-flex flex-column" id="languages">
     <div class="my-auto">

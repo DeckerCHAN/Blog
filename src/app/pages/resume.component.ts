@@ -75,6 +75,36 @@ export class ResumeComponent {
 
   ];
 
+  projects = [
+    {
+      name: 'Puji International Website',
+      keywords: ['Angular 5', 'Bootstrap', 'Java Spring', 'MongoDB'],
+      description: `Puji International is an real estate company which the majority of their customers are Chinese.
+      'This website is used to represent real estate information to their customers.
+      'The website is built by me, using boostrap and Angular5. The back end is powered by Java Spring and Mongodb.`,
+      projectUrl: 'https://github.com/DeckerCHAN/PujiInternational',
+      projectDemoUrl: 'http://pujiinternational.com'
+
+    },
+    {
+      name: 'Terminology Launcher',
+      keywords: ['.NET', 'C#', 'WPF', 'Desktop'],
+      description: `A game instance launcher used to start up PC game called Minecraft.
+       Help MOD and MOD pack creator by automatically manage end user's client content,
+       incremental upgrade even account management. A package system helps MOD creator distribute thier MOD files,
+       bring easeir access to end users.`,
+      projectUrl: 'https://github.com/DeckerCHAN/TerminologyLauncher',
+      projectDemoUrl: ''
+    },
+    {
+      name: 'Traffic Simulation',
+      keywords: ['Java', 'JavaFX', 'Algorithm'],
+      description: `An Java based software used to analysis side effects by road maintenance.
+       Also, it can demonstrate how traffic light involved.`,
+      projectUrl: 'https://github.com/ProcrastinationPatients/TrafficTransportationSimulator',
+      projectDemoUrl: ''
+    }
+  ];
   experiences = [
     {
       company: 'Collagis Pty Ltd(ANU Tech Launcher)',
@@ -125,12 +155,14 @@ export class ResumeComponent {
       name: 'Csharp',
       iconClasses: ['devicon-csharp-plain'],
       level: '95',
+      description: `7 Years programming experience on C#. Familiar with ASP.NET, MVC, Entity Framework, WPF, MS-SQL.`,
       barClasses: ['progress-bar-striped', 'progress-bar-animated', 'bg-success']
     },
     {
       name: 'Java',
       iconClasses: ['devicon-java-plain'],
       level: '90',
+      description: `Large amount of project experience on Java. Having confidence on Spring, JavaFX, JVM, Lambda Stream`,
       barClasses: ['progress-bar-striped', 'progress-bar-animated', 'bg-success']
     },
 
@@ -138,24 +170,28 @@ export class ResumeComponent {
       name: 'Linux',
       iconClasses: ['devicon-linux-plain'],
       level: '90',
+      description: `Years of experiences on Fedora, Ubuntu and CentOS. Capable of shell programming`,
       barClasses: ['progress-bar-striped', 'progress-bar-animated', 'bg-success']
     },
     {
       name: 'Mysql',
       iconClasses: ['devicon-mysql-plain'],
       level: '85',
+      description: ``,
       barClasses: ['progress-bar-striped', 'progress-bar-animated', 'bg-success']
     },
     {
       name: 'Python',
       iconClasses: ['devicon-python-plain'],
       level: '75',
+      description: ``,
       barClasses: ['progress-bar-striped', 'progress-bar-animated', 'bg-success']
     },
     {
       name: 'Javascript',
       iconClasses: ['devicon-javascript-plain'],
       level: '65',
+      description: ``,
       barClasses: ['progress-bar-striped', 'progress-bar-animated', 'bg-info']
     },
     {
@@ -169,6 +205,7 @@ export class ResumeComponent {
       name: 'Cpp',
       iconClasses: ['devicon-cplusplus-plain'],
       level: '25',
+      description: ``,
       barClasses: ['progress-bar-animated', 'bg-danger']
     }];
 
