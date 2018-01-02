@@ -10,7 +10,6 @@ import { HeaderComponent } from './controls/header.component';
 import { ResumeComponent } from './pages/resume.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollSpyModule, ScrollSpyService } from 'ngx-scrollspy';
-import { PostComponent } from './pages/post.component';
 import { GameComponent } from './pages/game.component';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
@@ -23,7 +22,6 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
     NavigatorComponent,
     HeaderComponent,
     ResumeComponent,
-    PostComponent,
     GameComponent
   ],
   imports: [
