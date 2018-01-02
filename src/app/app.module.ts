@@ -11,6 +11,9 @@ import { ResumeComponent } from './pages/resume.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollSpyModule, ScrollSpyService } from 'ngx-scrollspy';
 import { PostComponent } from './pages/post.component';
+import { GameComponent } from './pages/game.component';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 
 @NgModule({
@@ -20,16 +23,17 @@ import { PostComponent } from './pages/post.component';
     NavigatorComponent,
     HeaderComponent,
     ResumeComponent,
-    PostComponent
+    PostComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ScrollSpyModule
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
 
   ],
-  providers: [ScrollSpyService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
