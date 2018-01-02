@@ -17,13 +17,13 @@ export class GameComponent implements AfterViewInit, AfterViewChecked {
   @ViewChild('map') map: ElementRef;
 
 
-  private context2d: any;
+  context2d: any;
 
   @HostBinding('style.height.px')
-  private innerHeight: number;
+  innerHeight: number;
 
   @HostBinding('style.width.px')
-  private innerWidth: number;
+  innerWidth: number;
 
 
   mapWidth: number;
@@ -113,10 +113,9 @@ export class GameComponent implements AfterViewInit, AfterViewChecked {
 
   }
 
+  mousedown() {
 
-
-
-
+  }
 
 
 }
