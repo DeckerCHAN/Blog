@@ -58,7 +58,7 @@ export class ResumeComponent implements OnInit {
       period: 'Sep 2011 - Jul 2015',
       major: 'Bachelor of Computer Science',
       direction: 'Management Information System',
-      description: 'Course finished: ',
+      description: '',
       gpa: '3.33/4.30'
 
     },
