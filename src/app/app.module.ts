@@ -13,6 +13,8 @@ import { ScrollSpyModule, ScrollSpyService } from 'ngx-scrollspy';
 import { GameComponent } from './pages/game.component';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { RecordService } from './services/record.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,10 +30,11 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
 
   ],
-  providers: [],
+  providers: [RecordService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

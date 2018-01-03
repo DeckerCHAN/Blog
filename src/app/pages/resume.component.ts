@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { animate, state, style, keyframes, transition, trigger } from '@angular/animations';
 import { ScrollSpyService } from 'ngx-scrollspy';
+import { RecordService } from '../services/record.service';
 
 @Component({
   selector: 'app-resume',
@@ -37,8 +38,7 @@ import { ScrollSpyService } from 'ngx-scrollspy';
 })
 
 
-export class ResumeComponent {
-
+export class ResumeComponent implements OnInit {
   education = [
     {
       name: 'Australian National University',
@@ -58,7 +58,7 @@ export class ResumeComponent {
       period: 'Sep 2011 - Jul 2015',
       major: 'Bachelor of Computer Science',
       direction: 'Management Information System',
-      description: 'Some description',
+      description: 'Course finished: ',
       gpa: '3.33/4.30'
 
     },
@@ -68,7 +68,9 @@ export class ResumeComponent {
       period: 'Sep 2011 - Jul 2015',
       major: 'Bachelor of Computer Science',
       direction: 'Computer Science and Technology',
-      description: 'Some description',
+      description: 'We were engage in computer system analysis, project management, ' +
+      'information management system development, e-commerce,' +
+      ' information systems integration and other cross-disciplinary research and development and management.',
       gpa: '3.8/4.0'
 
     },
@@ -80,8 +82,8 @@ export class ResumeComponent {
       name: 'Puji International Website',
       keywords: ['Angular 5', 'Bootstrap', 'Java Spring', 'MongoDB'],
       description: `Puji International is an real estate company which the majority of their customers are Chinese.
-      'This website is used to represent real estate information to their customers.
-      'The website is built by me, using boostrap and Angular5. The back end is powered by Java Spring and Mongodb.`,
+      This website is used to represent real estate information to their customers.
+      The website is using boostrap and Angular5 on front end. The back end is powered by Java Spring and data storaged in Mongodb.`,
       projectUrl: 'https://github.com/DeckerCHAN/PujiInternational',
       projectDemoUrl: 'http://pujiinternational.com'
 
@@ -211,6 +213,15 @@ export class ResumeComponent {
 
 
   state = 'inactive';
+
+  constructor(public recordService: RecordService) {
+
+  }
+
+  ngOnInit(): void {
+    this.recordService.recording(navigator);
+  }
+
 
   toggleMove() {
     this.state = (this.state === 'inactive' ? 'active' : 'inactive');
