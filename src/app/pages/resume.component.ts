@@ -92,7 +92,7 @@ export class ResumeComponent implements OnInit {
       name: 'Terminology Launcher',
       keywords: ['.NET', 'C#', 'WPF', 'Desktop'],
       description: `A game instance launcher used to start up PC game called Minecraft.
-       Help MOD and MOD pack creator by automatically manage end user's client content,
+       Helping MOD and MOD pack creator by automatically manage end user's client content,
        incremental upgrade even account management. A package system helps MOD creator distribute thier MOD files,
        bring easeir access to end users.`,
       projectUrl: 'https://github.com/DeckerCHAN/TerminologyLauncher',
