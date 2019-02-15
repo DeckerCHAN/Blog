@@ -1,7 +1,8 @@
-import { HttpHeaders } from '@angular/common/http';
+import {HttpHeaders} from '@angular/common/http';
 
-export const recordUrl = 'http://deckerchan.com/api/access';
+export const baseUrl = 'http://deckerchan.com/api';
+
+  export const antiCheatingUrl = 'http://localhost:20009/api/Analysis';
 export const headers = new HttpHeaders()
-  .set('Content-Type', 'application/json')
   .set('Access-Control-Allow-Origin', '*');
 

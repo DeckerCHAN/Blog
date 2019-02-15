@@ -1,7 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { animate, state, style, keyframes, transition, trigger } from '@angular/animations';
-import { ScrollSpyService } from 'ngx-scrollspy';
-import { RecordService } from '../services/record.service';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {animate, state, style, keyframes, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-resume',
@@ -69,8 +67,8 @@ export class ResumeComponent implements OnInit {
       major: 'Bachelor of Computer Science',
       direction: 'Computer Science and Technology',
       description: 'We were engage in computer system analysis, project management, ' +
-      'information management system development, e-commerce,' +
-      ' information systems integration and other cross-disciplinary research and development and management.',
+        'information management system development, e-commerce,' +
+        ' information systems integration and other cross-disciplinary research and development and management.',
       gpa: '3.8/4.0'
 
     },
@@ -214,12 +212,12 @@ export class ResumeComponent implements OnInit {
 
   state = 'inactive';
 
-  constructor(public recordService: RecordService) {
+  constructor() {
 
   }
 
   ngOnInit(): void {
-    this.recordService.recording(navigator);
+
   }
 
 

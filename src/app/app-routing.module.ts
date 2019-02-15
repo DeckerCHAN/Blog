@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { PrimaryComponent } from './pages/primary.component';
-import { ResumeComponent } from './pages/resume.component';
-import { GameComponent } from './pages/game.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ResumeComponent} from './pages/resume.component';
+import {AntiCheatingComponent} from './pages/anti-cheating.component';
+import {SelectComponent} from './pages/select.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/resume', pathMatch: 'full'},
-  {path: 'primary', component: PrimaryComponent},
+  {path: 'anticheat', component: AntiCheatingComponent},
   {path: 'resume', component: ResumeComponent},
-  {path: 'game', component: GameComponent},
+  {path: 'select', component: SelectComponent},
 
 
 ];
