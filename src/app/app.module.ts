@@ -15,6 +15,7 @@ import {AntiCheatingComponent} from './pages/anti-cheating.component';
 import {AntiCheatingService} from './services/anti-cheating.service';
 import {Ng2GoogleChartsModule} from 'ng2-google-charts';
 import {SelectComponent} from './pages/select.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {SelectComponent} from './pages/select.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     Ng2GoogleChartsModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
