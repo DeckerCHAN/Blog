@@ -29,13 +29,13 @@ import { SelectStatus } from '../model/SelectStatus';
       </div>
 
       <div *ngFor="let item of this.latestStatus.price; let i = index; trackBy: customTB" class="row">
-        <h3 class="col-1">Room{{i + 1}}:</h3>
-        <button class="btn col-2 m-2"  (click)="this.pick(i)">{{item}}</button>
+        <h3 class="col-lg-1 col-sm-12">Room{{i + 1}}:</h3>
+        <button class="btn col-lg-4 col-sm-12 m-2"  (click)="this.pick(i)">{{item}}</button>
       </div>
 
       <div *ngIf="this.latestStatus.endGame" class="row">
         <div *ngFor="let item of this.latestStatus.selection; let i = index;  trackBy: customTB" class="col-12">
-          <h3 class="col-3">Player{{i + 1}} : room {{item != null ? item + 1 : null}}</h3>
+          <h3 class="col-12">Player{{i + 1}} : room {{item != null ? item + 1 : null}}</h3>
         </div>
       </div>
 
