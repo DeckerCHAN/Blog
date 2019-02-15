@@ -11,15 +11,16 @@ import { SelectStatus } from '../model/SelectStatus';
   template: `
     <div class="container-fluid">
       <div class="row">
-        <h1>I am player {{this.playerIndex}}!</h1>
+        <h1 class="col-12">I am player {{this.playerIndex}}!</h1>
+        <h1 *ngIf="latestStatus.round != null " class="col-12">Round {{latestStatus.round}}...</h1>
       </div>
       <div class="row">
         <input class="col-4" type="text" [disabled]="this.lock ? '' : null" [(ngModel)]="playerIndex">
         <div class="col-4">
-          <button class="btn btn-lg" (click)="this.confirmIndex()">Confirm</button>
+          <button class="btn btn-lg btn-primary" (click)="this.confirmIndex()">Confirm</button>
         </div>
         <div class="col-4">
-          <button class="btn btn-lg" (click)="this.resetNew()">Reset</button>
+          <button class="btn btn-lg btn-danger" (click)="this.resetNew()">Reset</button>
         </div>
       </div>
 
@@ -29,12 +30,15 @@ import { SelectStatus } from '../model/SelectStatus';
 
       <div *ngFor="let item of this.latestStatus.price; let i = index; trackBy: customTB" class="row">
         <h3 class="col-1">Room{{i + 1}}:</h3>
-        <button class="btn col-2 m-2" (click)="this.pick(i)">{{item}}</button>
+        <button class="btn col-2 m-2"  (click)="this.pick(i)">{{item}}</button>
       </div>
 
-      <div *ngFor="let item of this.latestStatus.selection; let i = index;  trackBy: customTB" class="row">
-        <h3 class="col-3">Player{{i + 1}} : room {{item != null ? item + 1 : null}}</h3>
+      <div *ngIf="this.latestStatus.endGame" class="row">
+        <div *ngFor="let item of this.latestStatus.selection; let i = index;  trackBy: customTB" class="col-12">
+          <h3 class="col-3">Player{{i + 1}} : room {{item != null ? item + 1 : null}}</h3>
+        </div>
       </div>
+
     </div>
 
   `
@@ -64,7 +68,7 @@ export class SelectComponent implements OnInit, OnDestroy {
   }
 
   public pick(index): any {
-    if (this.lock) {
+    if (this.lock && !this.latestStatus.endGame) {
       const f = new FormData();
       f.append('index', (Number(this.playerIndex) - 1).toString());
       f.append('pickIndex', index);
